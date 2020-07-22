@@ -6,14 +6,11 @@ import RestaurantsList from './RestaurantsList';
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.section}>
+      <View style={[styles.section, { height: 80, backgroundColor: 'red' }]}>
         <Text>ReNa-Eat</Text>
       </View>
-      <View>
+      <View style={[styles.section, { height: 80, backgroundColor: 'grey' }]}>
         <Text>Filters placeholder</Text>
-      </View>
-      <View>
-        <Text>Another section</Text>
       </View>
       <View style={styles.multiitemSection}>
         <RestaurantsList/>
@@ -30,14 +27,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
   section: {
-    padding: 10
+    padding: 10,
+    alignItems: 'center'
   },
   multiitemSection: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
 });
