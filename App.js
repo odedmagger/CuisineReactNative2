@@ -10,7 +10,7 @@ export default function App() {
         <Text>ReNa-Eat</Text>
       </View>
       <View style={[styles.section, { height: 80, backgroundColor: 'grey' }]}>
-        <Text>Filters placeholder - just testing</Text>
+        <Text>Filters placeholder 222 333ff555r</Text>
       </View>
       <View style={styles.multiitemSection}>
         <RestaurantsList/>
