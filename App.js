@@ -1,13 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import RestaurantsList from './RestaurantsList';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <View style={[styles.section, { height: 80, backgroundColor: 'red' }]}>
-        <Text>ReNa-Eat</Text>
+        <ImageBackground 
+          source={require('./img/food_hero.jpg')} 
+          style={{width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center'}}
+        >
+          <Text style={styles.header_text}>EMPATHY EAT</Text>
+        </ImageBackground>
       </View>
       <View style={[styles.section, { height: 80, backgroundColor: 'grey' }]}>
         <Text>Filters placeholder 222 333ff555</Text>
@@ -18,7 +23,7 @@ export default function App() {
           <Text>Main</Text>
         </View>
       </View>
-      {/*<StatusBar style="auto" />*/}
+      { /*<StatusBar style="auto" />*/ }
     </View>
   );
 }
@@ -30,11 +35,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   section: {
-    padding: 10,
     alignItems: 'center'
   },
   multiitemSection: {
     flex: 1,
     flexDirection: 'row',
+  },
+  header_text: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 40
   },
 });
