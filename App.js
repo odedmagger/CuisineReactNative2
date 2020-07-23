@@ -15,7 +15,7 @@ export default function App() {
         </ImageBackground>
       </View>
       <View style={[styles.section, { height: 80, backgroundColor: 'grey' }]}>
-        <Text>Filters placeholder 222 333ff555</Text>
+        <Text>Filters placeholder 222 333ff555r</Text>
       </View>
       <View style={styles.multiitemSection}>
         <RestaurantsList/>
