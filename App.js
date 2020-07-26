@@ -1,7 +1,45 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import RestaurantsList from './RestaurantsList';
+import RestaurantsList from './app/components/RestaurantsList';
+
+const restaurantData = [
+  {
+    id: '1',
+    name: 'Triola',
+    cuisine: 'Italian',
+    rating: 4,
+    deliveryTime: 60
+  },
+  {
+    id: '2',
+    name: 'Reggazzi',
+    cuisine: 'Italian',
+    rating: 5,
+    deliveryTime: 40
+  },
+  {
+    id: '3',
+    name: 'Agadir',
+    cuisine: 'Hamburger',
+    rating: 3,
+    deliveryTime: 90
+  },
+  {
+    id: '4',
+    name: 'Kisu',
+    cuisine: 'Sushi',
+    rating: 5,
+    deliveryTime: 90
+  },
+  {
+    id: '5',
+    name: 'Moses',
+    cuisine: 'Hamburger',
+    rating: 3,
+    deliveryTime: 110
+  },
+];
 
 export default function App() {
   return (
@@ -18,13 +56,9 @@ export default function App() {
         <Text>Filters placeholder 222 333ff555r</Text>
       </View>
       <View style={styles.multiitemSection}>
-        <RestaurantsList/>
-        <View>
-          <Text>Main</Text>
-        </View>
+        <RestaurantsList data={restaurantData}/>
       </View>
       { /*<StatusBar style="auto" />*/ }
-      { /* Test comment right here */ }
     </View>
   );
 }
