@@ -24,6 +24,7 @@ export default function App() {
         </View>
       </View>
       { /*<StatusBar style="auto" />*/ }
+      { /* Test comment right here */ }
     </View>
   );
 }
