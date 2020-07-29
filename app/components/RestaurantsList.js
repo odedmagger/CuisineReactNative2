@@ -7,7 +7,6 @@ export default function RestaurantsList(props) {
         <FlatList
           data={props.data}
           renderItem={ ({item}) => <RestaurantsItemView item={item} /> }
-
         />
     );
 }
