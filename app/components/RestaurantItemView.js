@@ -9,7 +9,7 @@ Item example:
   },
 */
 import React from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
+import { StyleSheet, Image, Text, View, TouchableHighlight } from 'react-native';
 
 const iconsCache = {
   Italian: require('../../img/pizza.png'),
@@ -18,20 +18,25 @@ const iconsCache = {
 }
 
 export default function RestaurantsItemView(props) { 
-  //console.log('13346'); // TODO REMOVE
+  const handleClick = () => {
+    alert('You tapped the button!')
+  }
+
   const item = props.item;
   
   return (
-    <View style={styles.itemContainer}>
-       <Image
-          style={styles.foodIcon}
-          source={iconsCache[item.cuisine]}
-        />
-        <View style={styles.textsContainer}>
-          <Text style={styles.itemName}>{item.name}</Text>
-          <Text style={styles.itemRating}>{'⭐'.repeat(item.rating)}</Text>
-        </View>
-    </View>
+    <TouchableHighlight onPress={handleClick} underlayColor="aqua">
+      <View style={styles.itemContainer}>
+        <Image
+            style={styles.foodIcon}
+            source={iconsCache[item.cuisine]}
+          />
+          <View style={styles.textsContainer}>
+            <Text style={styles.itemName}>{item.name}</Text>
+            <Text style={styles.itemRating}>{'⭐'.repeat(item.rating)}</Text>
+          </View>
+      </View>
+    </TouchableHighlight>
     );
 }
 
