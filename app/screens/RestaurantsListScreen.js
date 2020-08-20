@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, ActivityIndicator } from 'react-native';
 import RestaurantsList from '../components/RestaurantsList';
 
 const restaurantData = [
@@ -40,8 +40,43 @@ const restaurantData = [
     },
   ];
 
-export default function RestaurantsListScreen(props) {
-  return (
+export default class RestaurantsListScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      restaurants: [],
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    fetch('https://reactnative.dev/movies.json')
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({ restaurants: json.movies });
+      })
+      .catch((error) => console.error(error))
+      .finally(() => {
+        this.setState({ isLoading: false });
+      });
+  }
+
+  render() {
+    const { restaurants, isLoading } = this.state;
+
+    console.log('chfff');
+    console.log(restaurants);
+
+    if (isLoading) {
+      return (
+        <View style={styles.container}>
+          <ActivityIndicator/>
+        </View>  
+      )
+    }
+
+    return (
       <View style={styles.container}>
         <View style={[styles.section, { height: 80, backgroundColor: 'red' }]}>
           <ImageBackground 
@@ -55,11 +90,12 @@ export default function RestaurantsListScreen(props) {
           <Text>Filters placeholder 222 333ff555r</Text>
         </View>
         <View style={styles.multiitemSection}>
-          <RestaurantsList data={restaurantData} navigation={props.navigation}/>
+          <RestaurantsList data={restaurantData} navigation={this.props.navigation}/>
         </View>
         { /*<StatusBar style="auto" />*/ }
       </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
