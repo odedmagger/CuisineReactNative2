@@ -19,7 +19,10 @@ const iconsCache = {
 
 export default function RestaurantsItemView(props) { 
   const handleClick = () => {
-    props.navigation.navigate('Restaurant');
+    props.navigation.navigate('Restaurant', {
+      title: 'This does not work',
+      restaurant: props.item
+    }); // TODO-OM - how to set title dynamically?
   }
 
   const item = props.item;

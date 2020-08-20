@@ -14,11 +14,12 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={RestaurantsListScreen}
-          options={{ title: 'Welcome' }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen 
           name="Restaurant" 
           component={RestaurantDetailsScreen}
+          options={{ title: ''}}
         />
       </Stack.Navigator>
     </NavigationContainer>

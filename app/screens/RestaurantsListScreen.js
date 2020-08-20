@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import RestaurantsList from '../components/RestaurantsList';
-import { useLinkProps } from '@react-navigation/native';
 
 const restaurantData = [
     {
