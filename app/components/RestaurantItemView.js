@@ -19,13 +19,13 @@ const iconsCache = {
 
 export default function RestaurantsItemView(props) { 
   const handleClick = () => {
-    alert('You tapped the button!')
+    props.navigation.navigate('Restaurant');
   }
 
   const item = props.item;
-  
+
   return (
-    <TouchableHighlight onPress={handleClick} underlayColor="aqua">
+    <TouchableHighlight onPress={ handleClick } underlayColor="#e6e6fa99">
       <View style={styles.itemContainer}>
         <Image
             style={styles.foodIcon}

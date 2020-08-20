@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import RestaurantsList from '../components/RestaurantsList';
+import { useLinkProps } from '@react-navigation/native';
 
 const restaurantData = [
     {
@@ -40,7 +41,7 @@ const restaurantData = [
     },
   ];
 
-export default function RestaurantsListScreen() {
+export default function RestaurantsListScreen(props) {
   return (
       <View style={styles.container}>
         <View style={[styles.section, { height: 80, backgroundColor: 'red' }]}>
@@ -55,7 +56,7 @@ export default function RestaurantsListScreen() {
           <Text>Filters placeholder 222 333ff555r</Text>
         </View>
         <View style={styles.multiitemSection}>
-          <RestaurantsList data={restaurantData}/>
+          <RestaurantsList data={restaurantData} navigation={props.navigation}/>
         </View>
         { /*<StatusBar style="auto" />*/ }
       </View>
