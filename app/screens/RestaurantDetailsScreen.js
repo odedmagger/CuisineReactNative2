@@ -11,13 +11,3 @@ export default function RestaurantDetailsScreen({route, navigation}) {
         </View>
     );
 }
-
-// TODO-OM how to set title dynamically?
-RestaurantDetailsScreen.navigationOptions = {
-    title: 'fff',
-};
-/*
-RestaurantDetailsScreen['navigationOptions'] =  ({ navigation }) => ({
-    title: 'Hi'//`${navigation.state.params.title}`
-});
-*/
